@@ -1,0 +1,5 @@
+use_frameworks!
+
+target "ChocolateBox" do
+    pod 'Parse', '~>1.13.0'
+end
