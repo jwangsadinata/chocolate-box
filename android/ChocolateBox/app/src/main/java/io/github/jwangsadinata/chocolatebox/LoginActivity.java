@@ -24,13 +24,13 @@ public class LoginActivity extends AppCompatActivity {
     @Bind(R.id.login_progress)
     protected ProgressBar login_progress;
 
-    @Bind(R.id.etUserName)
+    @Bind(R.id.etLoginUserName)
     protected EditText etUserName;
 
-    @Bind(R.id.etPassword)
+    @Bind(R.id.etLoginPassword)
     protected EditText etPassword;
 
-    @Bind(R.id.btnRegister)
+    @Bind(R.id.btnToRegister)
     protected Button btnRegister;
 
     @Bind(R.id.btnLogin)
@@ -47,33 +47,11 @@ public class LoginActivity extends AppCompatActivity {
         ParseUser.logOut();
     }
 
-    @OnClick(R.id.btnRegister)
+    @OnClick(R.id.btnToRegister)
     protected void registerUser() {
-        ParseUser user = new ParseUser();
-        user.setUsername(etUserName.getText().toString());
-        user.setPassword(etPassword.getText().toString());
-
-        login_progress.setVisibility(View.VISIBLE);
-        user.signUpInBackground(new SignUpCallback() {
-            @Override
-            public void done(ParseException e) {
-                login_progress.setVisibility(View.GONE);
-
-                if (e == null) {
-                    Toast.makeText(LoginActivity.this, "Registration OK",
-                            Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(LoginActivity.this,
-                            "Registration failed: " + e.getMessage(),
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        ParseObject object = new ParseObject(MainActivity.TABLE_USER_MATCH);
-        object.put(MainActivity.KEY_USERNAME, etUserName.getText().toString());
-        object.put(MainActivity.KEY_HAS_MATCHED, false);
-        object.saveInBackground();
+        Intent intentStartRegisterActivity = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivity(intentStartRegisterActivity);
+        finish();
     }
 
     @OnClick(R.id.btnLogin)
@@ -91,7 +69,6 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intentStartMainActivity = new Intent(
                             LoginActivity.this, MainActivity.class);
                     startActivity(intentStartMainActivity);
-                    // close this activity
                     finish();
                 } else {
                     Toast.makeText(LoginActivity.this,
