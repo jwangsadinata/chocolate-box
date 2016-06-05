@@ -1,0 +1,43 @@
+HOW TO TEST POSTING/RETREIVING DATA USING cURL FOR FOODSTOP, BASED ON PARSE SERVER
+- Jason Wangsadinata -
+
+Use the following example below in the command line to post/retrieve stuff from the database.
+
+=================================================================================================
+
+- POSTING DATA EXAMPLE 
+
+curl -X POST \
+  -H "X-Parse-Application-Id: 259williams" \
+  -H "X-Parse-Master-Key: carsonkim" \
+  -H "X-Parse-Url: https://chocolate-box-wesleyan.herokuapp.com/parse" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Timmy Kim","hasMatched":false}' \
+  https://chocolate-box-wesleyan.herokuapp.com/parse/classes/Test
+
+
+=================================================================================================
+
+- RETREIVING DATA EXAMPLE
+
+curl -X GET \
+  -H "X-Parse-Application-Id: 259williams" \
+  -H "X-Parse-Master-Key: carsonkim" \
+  -H "X-Parse-Url: https://chocolate-box-wesleyan.herokuapp.com/parse" \
+  https://chocolate-box-wesleyan.herokuapp.com/parse/classes/Test
+
+
+
+
+=================================================================================================
+
+HOW TO RUN PARSE-DASHBOARD ON YOUR LOCAL MACHINE
+
+First, install npm. Go to node.js website and do it.
+
+Next, run this commands
+
+$ npm install -g parse-dashboard
+$ parse-dashboard --appId 259williams --masterKey carsonkim --serverURL "https://chocolate-box-wesleyan.herokuapp.com/parse"
+
+Then, go to http://localhost:4040/apps to check your apps.
