@@ -38,7 +38,7 @@
 
     <TextView
         android:paddingTop="20dp"
-        android:paddingBottom="60dp"
+        android:paddingBottom="50dp"
         android:id="@+id/tvMatchName"
         android:visibility="invisible"
         android:layout_width="wrap_content"
@@ -48,12 +48,27 @@
         android:textStyle="bold"
         android:text="a" />
 
-    <Button
-        android:id="@+id/btnFindMatch"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text=""/>
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnFindMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""/>
+
+        <Button
+            android:id="@+id/btnRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refresh"/>
+
+    </LinearLayout>
+
 
 
 

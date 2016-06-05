@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private ParseObject object;
     private String currentUser;
     private String userFullName;
+    private String partnerName;
 
     @Bind(R.id.tvHelloUser)
     protected TextView tvHelloUser;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.btnFindMatch)
     protected Button btnFindMatch;
 
+    @Bind(R.id.btnRefresh)
+    protected Button btnRefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        setup();
+
+    }
+
+    private void setup() {
         currentUser = ParseUser.getCurrentUser().getUsername();
         ParseQuery<ParseObject> query = ParseQuery.getQuery(TABLE_USER_MATCH);
         query.whereEqualTo(KEY_USERNAME, currentUser);
@@ -89,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     @OnClick(R.id.btnFindMatch)
@@ -110,7 +117,12 @@ public class MainActivity extends AppCompatActivity {
                     else {
                         object.put(KEY_HAS_MATCHED, true);
                         findMatch();
-                        object.put(KEY_MATCHED_USER, "Hello");
+                        try {
+                            object.put(KEY_MATCHED_USER, partnerName);
+                        }
+                        catch (NullPointerException e1) {
+                            e1.printStackTrace();
+                        }
                         object.saveInBackground();
                     }
                 } else {
@@ -123,23 +135,19 @@ public class MainActivity extends AppCompatActivity {
     private void findMatch() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery(TABLE_USER_MATCH);
         query.whereEqualTo(KEY_HAS_MATCHED, false);
-        query.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> objects, ParseException e) {
-                if (e == null) {
-                    Random r = new Random();
-                    int result = r.nextInt(objects.size());
-                    objects.get(result).put(KEY_MATCHED_USER, userFullName);
-                    objects.get(result).put(KEY_HAS_MATCHED, true);
-                    objects.get(result).saveInBackground();
-                    String partnerName = objects.get(result).getString(KEY_FULLNAME);
-                    Toast.makeText(MainActivity.this, "Partner Name is: " + partnerName, Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Log.d("error", "Error: " + e.getMessage());
-                }
-            }
-        });
+        try {
+            List<ParseObject> objects = query.find();
+            Random r = new Random();
+            int result = r.nextInt(objects.size());
+            objects.get(result).put(KEY_MATCHED_USER, userFullName);
+            objects.get(result).put(KEY_HAS_MATCHED, true);
+            objects.get(result).saveInBackground();
+            partnerName = objects.get(result).getString(KEY_FULLNAME);
+            Toast.makeText(MainActivity.this, "Partner Name is: " + partnerName, Toast.LENGTH_SHORT).show();
+        }
+        catch (com.parse.ParseException e){
+            e.printStackTrace();
+        }
     }
 
     private void resetMatch() {
@@ -149,13 +157,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
                 if (e == null) {
-                    Toast.makeText(MainActivity.this, userFullName, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Click on the refresh button", Toast.LENGTH_SHORT).show();
                     objects.get(0).put(KEY_MATCHED_USER, "");
                     objects.get(0).put(KEY_HAS_MATCHED, false);
                     objects.get(0).saveInBackground();
                 }
             }
         });
+    }
+
+    @OnClick(R.id.btnRefresh)
+    protected void refreshMessages() {
+        setup();
     }
 
 
