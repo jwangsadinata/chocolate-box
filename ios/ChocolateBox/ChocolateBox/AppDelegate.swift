@@ -6,6 +6,8 @@
 //  Copyright © 2016 259Williams. All rights reserved.
 //
 
+import Parse
+import Bolts
 import UIKit
 import CoreData
 
@@ -14,9 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // Initialize Parse.
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "259williams"
+            $0.server = "https://chocolate-box-wesleyan.herokuapp.com/parse"
+        }
+        Parse.initializeWithConfiguration(configuration)
+        
         return true
     }
 

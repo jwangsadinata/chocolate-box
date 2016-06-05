@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C71AF421D03DC4C0068F24B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C71AF411D03DC4C0068F24B /* User.swift */; };
+		1C71AF4C1D03E07C0068F24B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF4A1D03E07C0068F24B /* Bolts.framework */; };
+		1C71AF4D1D03E07C0068F24B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF4B1D03E07C0068F24B /* Parse.framework */; };
+		1C71AF4F1D03E0C90068F24B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF4E1D03E0C90068F24B /* AudioToolbox.framework */; };
+		1C71AF511D03E0CF0068F24B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF501D03E0CF0068F24B /* CFNetwork.framework */; };
+		1C71AF531D03E0D70068F24B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF521D03E0D70068F24B /* CoreGraphics.framework */; };
+		1C71AF551D03E0DC0068F24B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF541D03E0DC0068F24B /* CoreLocation.framework */; };
+		1C71AF571D03E0E80068F24B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF561D03E0E80068F24B /* QuartzCore.framework */; };
+		1C71AF591D03E0F00068F24B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF581D03E0F00068F24B /* Security.framework */; };
+		1C71AF5B1D03E0F90068F24B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF5A1D03E0F90068F24B /* StoreKit.framework */; };
+		1C71AF5D1D03E1020068F24B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF5C1D03E1020068F24B /* SystemConfiguration.framework */; };
+		1C71AF5F1D03E1100068F24B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF5E1D03E1100068F24B /* libz.tbd */; };
+		1C71AF611D03E11D0068F24B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF601D03E11D0068F24B /* libsqlite3.tbd */; };
+		1C71AF631D03E14C0068F24B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1C71AF621D03E14C0068F24B /* Podfile */; };
 		1CDE149D1D03D9630072759B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE149C1D03D9630072759B /* AppDelegate.swift */; };
 		1CDE149F1D03D9630072759B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE149E1D03D9630072759B /* ViewController.swift */; };
 		1CDE14A21D03D9640072759B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CDE14A01D03D9640072759B /* Main.storyboard */; };
@@ -15,6 +29,7 @@
 		1CDE14AA1D03D9640072759B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CDE14A81D03D9640072759B /* LaunchScreen.storyboard */; };
 		1CDE14B51D03D9650072759B /* ChocolateBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE14B41D03D9650072759B /* ChocolateBoxTests.swift */; };
 		1CDE14C01D03D9650072759B /* ChocolateBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE14BF1D03D9650072759B /* ChocolateBoxUITests.swift */; };
+		6979F467931EEA96D6D47CD7 /* Pods_ChocolateBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A0A4372746C823AB2CDB61 /* Pods_ChocolateBox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +50,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C71AF411D03DC4C0068F24B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1C71AF4A1D03E07C0068F24B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		1C71AF4B1D03E07C0068F24B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		1C71AF4E1D03E0C90068F24B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1C71AF501D03E0CF0068F24B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1C71AF521D03E0D70068F24B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1C71AF541D03E0DC0068F24B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1C71AF561D03E0E80068F24B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1C71AF581D03E0F00068F24B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1C71AF5A1D03E0F90068F24B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		1C71AF5C1D03E1020068F24B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1C71AF5E1D03E1100068F24B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1C71AF601D03E11D0068F24B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1C71AF621D03E14C0068F24B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		1CDE14991D03D9620072759B /* ChocolateBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChocolateBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CDE149C1D03D9630072759B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CDE149E1D03D9630072759B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +78,9 @@
 		1CDE14BB1D03D9650072759B /* ChocolateBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChocolateBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CDE14BF1D03D9650072759B /* ChocolateBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChocolateBoxUITests.swift; sourceTree = "<group>"; };
 		1CDE14C11D03D9650072759B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AA6DAA61A74814D410DF5D8 /* Pods-ChocolateBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChocolateBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChocolateBox/Pods-ChocolateBox.release.xcconfig"; sourceTree = "<group>"; };
+		927BA2F77F3B9BC6AC516AA5 /* Pods-ChocolateBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChocolateBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChocolateBox/Pods-ChocolateBox.debug.xcconfig"; sourceTree = "<group>"; };
+		94A0A4372746C823AB2CDB61 /* Pods_ChocolateBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChocolateBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +88,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C71AF611D03E11D0068F24B /* libsqlite3.tbd in Frameworks */,
+				1C71AF5F1D03E1100068F24B /* libz.tbd in Frameworks */,
+				1C71AF5D1D03E1020068F24B /* SystemConfiguration.framework in Frameworks */,
+				1C71AF5B1D03E0F90068F24B /* StoreKit.framework in Frameworks */,
+				1C71AF591D03E0F00068F24B /* Security.framework in Frameworks */,
+				1C71AF571D03E0E80068F24B /* QuartzCore.framework in Frameworks */,
+				1C71AF551D03E0DC0068F24B /* CoreLocation.framework in Frameworks */,
+				1C71AF531D03E0D70068F24B /* CoreGraphics.framework in Frameworks */,
+				1C71AF511D03E0CF0068F24B /* CFNetwork.framework in Frameworks */,
+				1C71AF4F1D03E0C90068F24B /* AudioToolbox.framework in Frameworks */,
+				1C71AF4D1D03E07C0068F24B /* Parse.framework in Frameworks */,
+				1C71AF4C1D03E07C0068F24B /* Bolts.framework in Frameworks */,
+				6979F467931EEA96D6D47CD7 /* Pods_ChocolateBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +121,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C71AF491D03E04E0068F24B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C71AF601D03E11D0068F24B /* libsqlite3.tbd */,
+				1C71AF5E1D03E1100068F24B /* libz.tbd */,
+				1C71AF5C1D03E1020068F24B /* SystemConfiguration.framework */,
+				1C71AF5A1D03E0F90068F24B /* StoreKit.framework */,
+				1C71AF581D03E0F00068F24B /* Security.framework */,
+				1C71AF561D03E0E80068F24B /* QuartzCore.framework */,
+				1C71AF541D03E0DC0068F24B /* CoreLocation.framework */,
+				1C71AF521D03E0D70068F24B /* CoreGraphics.framework */,
+				1C71AF501D03E0CF0068F24B /* CFNetwork.framework */,
+				1C71AF4E1D03E0C90068F24B /* AudioToolbox.framework */,
+				1C71AF4A1D03E07C0068F24B /* Bolts.framework */,
+				1C71AF4B1D03E07C0068F24B /* Parse.framework */,
+				94A0A4372746C823AB2CDB61 /* Pods_ChocolateBox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1CDE14901D03D9610072759B = {
 			isa = PBXGroup;
 			children = (
+				1C71AF621D03E14C0068F24B /* Podfile */,
+				1C71AF491D03E04E0068F24B /* Frameworks */,
 				1CDE149B1D03D9630072759B /* ChocolateBox */,
 				1CDE14B31D03D9650072759B /* ChocolateBoxTests */,
 				1CDE14BE1D03D9650072759B /* ChocolateBoxUITests */,
 				1CDE149A1D03D9620072759B /* Products */,
+				2086F841CAF2A7DAD137917D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +174,7 @@
 				1CDE14A81D03D9640072759B /* LaunchScreen.storyboard */,
 				1CDE14AB1D03D9640072759B /* Info.plist */,
 				1CDE14A31D03D9640072759B /* ChocolateBox.xcdatamodeld */,
+				1C71AF411D03DC4C0068F24B /* User.swift */,
 			);
 			path = ChocolateBox;
 			sourceTree = "<group>";
@@ -128,6 +197,15 @@
 			path = ChocolateBoxUITests;
 			sourceTree = "<group>";
 		};
+		2086F841CAF2A7DAD137917D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				927BA2F77F3B9BC6AC516AA5 /* Pods-ChocolateBox.debug.xcconfig */,
+				4AA6DAA61A74814D410DF5D8 /* Pods-ChocolateBox.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1CDE14C41D03D9650072759B /* Build configuration list for PBXNativeTarget "ChocolateBox" */;
 			buildPhases = (
+				ABD5A805FAC59D0BCB126D87 /* [CP] Check Pods Manifest.lock */,
 				1CDE14951D03D9620072759B /* Sources */,
 				1CDE14961D03D9620072759B /* Frameworks */,
 				1CDE14971D03D9620072759B /* Resources */,
+				7FD4AB026F730B2AFFE87CBD /* [CP] Embed Pods Frameworks */,
+				C2B2A7DA155A685C1542E00A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,6 +316,7 @@
 			files = (
 				1CDE14AA1D03D9640072759B /* LaunchScreen.storyboard in Resources */,
 				1CDE14A71D03D9640072759B /* Assets.xcassets in Resources */,
+				1C71AF631D03E14C0068F24B /* Podfile in Resources */,
 				1CDE14A21D03D9640072759B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,11 +337,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7FD4AB026F730B2AFFE87CBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChocolateBox/Pods-ChocolateBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABD5A805FAC59D0BCB126D87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C2B2A7DA155A685C1542E00A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChocolateBox/Pods-ChocolateBox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1CDE14951D03D9620072759B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C71AF421D03DC4C0068F24B /* User.swift in Sources */,
 				1CDE149F1D03D9630072759B /* ViewController.swift in Sources */,
 				1CDE14A51D03D9640072759B /* ChocolateBox.xcdatamodeld in Sources */,
 				1CDE149D1D03D9630072759B /* AppDelegate.swift in Sources */,
@@ -402,9 +533,14 @@
 		};
 		1CDE14C51D03D9650072759B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 927BA2F77F3B9BC6AC516AA5 /* Pods-ChocolateBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ChocolateBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.TFNW.ChocolateBox;
@@ -414,9 +550,14 @@
 		};
 		1CDE14C61D03D9650072759B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AA6DAA61A74814D410DF5D8 /* Pods-ChocolateBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ChocolateBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.TFNW.ChocolateBox;
