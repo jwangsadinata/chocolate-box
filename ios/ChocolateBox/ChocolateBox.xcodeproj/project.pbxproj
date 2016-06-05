@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CDE149D1D03D9630072759B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE149C1D03D9630072759B /* AppDelegate.swift */; };
+		1CDE149F1D03D9630072759B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE149E1D03D9630072759B /* ViewController.swift */; };
+		1CDE14A21D03D9640072759B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CDE14A01D03D9640072759B /* Main.storyboard */; };
+		1CDE14A51D03D9640072759B /* ChocolateBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE14A31D03D9640072759B /* ChocolateBox.xcdatamodeld */; };
+		1CDE14A71D03D9640072759B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CDE14A61D03D9640072759B /* Assets.xcassets */; };
+		1CDE14AA1D03D9640072759B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CDE14A81D03D9640072759B /* LaunchScreen.storyboard */; };
+		1CDE14B51D03D9650072759B /* ChocolateBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE14B41D03D9650072759B /* ChocolateBoxTests.swift */; };
+		1CDE14C01D03D9650072759B /* ChocolateBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE14BF1D03D9650072759B /* ChocolateBoxUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1CDE14B11D03D9650072759B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CDE14911D03D9610072759B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CDE14981D03D9620072759B;
+			remoteInfo = ChocolateBox;
+		};
+		1CDE14BC1D03D9650072759B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CDE14911D03D9610072759B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CDE14981D03D9620072759B;
+			remoteInfo = ChocolateBox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1CDE14991D03D9620072759B /* ChocolateBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChocolateBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CDE149C1D03D9630072759B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1CDE149E1D03D9630072759B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1CDE14A11D03D9640072759B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1CDE14A41D03D9640072759B /* ChocolateBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChocolateBox.xcdatamodel; sourceTree = "<group>"; };
+		1CDE14A61D03D9640072759B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1CDE14A91D03D9640072759B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1CDE14AB1D03D9640072759B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CDE14B01D03D9650072759B /* ChocolateBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChocolateBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CDE14B41D03D9650072759B /* ChocolateBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChocolateBoxTests.swift; sourceTree = "<group>"; };
+		1CDE14B61D03D9650072759B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CDE14BB1D03D9650072759B /* ChocolateBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChocolateBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CDE14BF1D03D9650072759B /* ChocolateBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChocolateBoxUITests.swift; sourceTree = "<group>"; };
+		1CDE14C11D03D9650072759B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CDE14961D03D9620072759B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CDE14AD1D03D9650072759B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CDE14B81D03D9650072759B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CDE14901D03D9610072759B = {
+			isa = PBXGroup;
+			children = (
+				1CDE149B1D03D9630072759B /* ChocolateBox */,
+				1CDE14B31D03D9650072759B /* ChocolateBoxTests */,
+				1CDE14BE1D03D9650072759B /* ChocolateBoxUITests */,
+				1CDE149A1D03D9620072759B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1CDE149A1D03D9620072759B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CDE14991D03D9620072759B /* ChocolateBox.app */,
+				1CDE14B01D03D9650072759B /* ChocolateBoxTests.xctest */,
+				1CDE14BB1D03D9650072759B /* ChocolateBoxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1CDE149B1D03D9630072759B /* ChocolateBox */ = {
+			isa = PBXGroup;
+			children = (
+				1CDE149C1D03D9630072759B /* AppDelegate.swift */,
+				1CDE149E1D03D9630072759B /* ViewController.swift */,
+				1CDE14A01D03D9640072759B /* Main.storyboard */,
+				1CDE14A61D03D9640072759B /* Assets.xcassets */,
+				1CDE14A81D03D9640072759B /* LaunchScreen.storyboard */,
+				1CDE14AB1D03D9640072759B /* Info.plist */,
+				1CDE14A31D03D9640072759B /* ChocolateBox.xcdatamodeld */,
+			);
+			path = ChocolateBox;
+			sourceTree = "<group>";
+		};
+		1CDE14B31D03D9650072759B /* ChocolateBoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				1CDE14B41D03D9650072759B /* ChocolateBoxTests.swift */,
+				1CDE14B61D03D9650072759B /* Info.plist */,
+			);
+			path = ChocolateBoxTests;
+			sourceTree = "<group>";
+		};
+		1CDE14BE1D03D9650072759B /* ChocolateBoxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1CDE14BF1D03D9650072759B /* ChocolateBoxUITests.swift */,
+				1CDE14C11D03D9650072759B /* Info.plist */,
+			);
+			path = ChocolateBoxUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1CDE14981D03D9620072759B /* ChocolateBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CDE14C41D03D9650072759B /* Build configuration list for PBXNativeTarget "ChocolateBox" */;
+			buildPhases = (
+				1CDE14951D03D9620072759B /* Sources */,
+				1CDE14961D03D9620072759B /* Frameworks */,
+				1CDE14971D03D9620072759B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChocolateBox;
+			productName = ChocolateBox;
+			productReference = 1CDE14991D03D9620072759B /* ChocolateBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1CDE14AF1D03D9650072759B /* ChocolateBoxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CDE14C71D03D9650072759B /* Build configuration list for PBXNativeTarget "ChocolateBoxTests" */;
+			buildPhases = (
+				1CDE14AC1D03D9650072759B /* Sources */,
+				1CDE14AD1D03D9650072759B /* Frameworks */,
+				1CDE14AE1D03D9650072759B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CDE14B21D03D9650072759B /* PBXTargetDependency */,
+			);
+			name = ChocolateBoxTests;
+			productName = ChocolateBoxTests;
+			productReference = 1CDE14B01D03D9650072759B /* ChocolateBoxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1CDE14BA1D03D9650072759B /* ChocolateBoxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CDE14CA1D03D9650072759B /* Build configuration list for PBXNativeTarget "ChocolateBoxUITests" */;
+			buildPhases = (
+				1CDE14B71D03D9650072759B /* Sources */,
+				1CDE14B81D03D9650072759B /* Frameworks */,
+				1CDE14B91D03D9650072759B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CDE14BD1D03D9650072759B /* PBXTargetDependency */,
+			);
+			name = ChocolateBoxUITests;
+			productName = ChocolateBoxUITests;
+			productReference = 1CDE14BB1D03D9650072759B /* ChocolateBoxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CDE14911D03D9610072759B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = 259Williams;
+				TargetAttributes = {
+					1CDE14981D03D9620072759B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					1CDE14AF1D03D9650072759B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 1CDE14981D03D9620072759B;
+					};
+					1CDE14BA1D03D9650072759B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 1CDE14981D03D9620072759B;
+					};
+				};
+			};
+			buildConfigurationList = 1CDE14941D03D9610072759B /* Build configuration list for PBXProject "ChocolateBox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1CDE14901D03D9610072759B;
+			productRefGroup = 1CDE149A1D03D9620072759B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1CDE14981D03D9620072759B /* ChocolateBox */,
+				1CDE14AF1D03D9650072759B /* ChocolateBoxTests */,
+				1CDE14BA1D03D9650072759B /* ChocolateBoxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CDE14971D03D9620072759B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDE14AA1D03D9640072759B /* LaunchScreen.storyboard in Resources */,
+				1CDE14A71D03D9640072759B /* Assets.xcassets in Resources */,
+				1CDE14A21D03D9640072759B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CDE14AE1D03D9650072759B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CDE14B91D03D9650072759B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CDE14951D03D9620072759B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDE149F1D03D9630072759B /* ViewController.swift in Sources */,
+				1CDE14A51D03D9640072759B /* ChocolateBox.xcdatamodeld in Sources */,
+				1CDE149D1D03D9630072759B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CDE14AC1D03D9650072759B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDE14B51D03D9650072759B /* ChocolateBoxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CDE14B71D03D9650072759B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CDE14C01D03D9650072759B /* ChocolateBoxUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1CDE14B21D03D9650072759B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CDE14981D03D9620072759B /* ChocolateBox */;
+			targetProxy = 1CDE14B11D03D9650072759B /* PBXContainerItemProxy */;
+		};
+		1CDE14BD1D03D9650072759B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CDE14981D03D9620072759B /* ChocolateBox */;
+			targetProxy = 1CDE14BC1D03D9650072759B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1CDE14A01D03D9640072759B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CDE14A11D03D9640072759B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1CDE14A81D03D9640072759B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CDE14A91D03D9640072759B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1CDE14C21D03D9650072759B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1CDE14C31D03D9650072759B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1CDE14C51D03D9650072759B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ChocolateBox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.TFNW.ChocolateBox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1CDE14C61D03D9650072759B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ChocolateBox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.TFNW.ChocolateBox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1CDE14C81D03D9650072759B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ChocolateBoxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.TFNW.ChocolateBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChocolateBox.app/ChocolateBox";
+			};
+			name = Debug;
+		};
+		1CDE14C91D03D9650072759B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ChocolateBoxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.TFNW.ChocolateBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChocolateBox.app/ChocolateBox";
+			};
+			name = Release;
+		};
+		1CDE14CB1D03D9650072759B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ChocolateBoxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.TFNW.ChocolateBoxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ChocolateBox;
+			};
+			name = Debug;
+		};
+		1CDE14CC1D03D9650072759B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ChocolateBoxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.TFNW.ChocolateBoxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ChocolateBox;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CDE14941D03D9610072759B /* Build configuration list for PBXProject "ChocolateBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CDE14C21D03D9650072759B /* Debug */,
+				1CDE14C31D03D9650072759B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CDE14C41D03D9650072759B /* Build configuration list for PBXNativeTarget "ChocolateBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CDE14C51D03D9650072759B /* Debug */,
+				1CDE14C61D03D9650072759B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1CDE14C71D03D9650072759B /* Build configuration list for PBXNativeTarget "ChocolateBoxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CDE14C81D03D9650072759B /* Debug */,
+				1CDE14C91D03D9650072759B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1CDE14CA1D03D9650072759B /* Build configuration list for PBXNativeTarget "ChocolateBoxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CDE14CB1D03D9650072759B /* Debug */,
+				1CDE14CC1D03D9650072759B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1CDE14A31D03D9640072759B /* ChocolateBox.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1CDE14A41D03D9640072759B /* ChocolateBox.xcdatamodel */,
+			);
+			currentVersion = 1CDE14A41D03D9640072759B /* ChocolateBox.xcdatamodel */;
+			path = ChocolateBox.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1CDE14911D03D9610072759B /* Project object */;
+}
