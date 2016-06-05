@@ -196,6 +196,7 @@
 				TargetAttributes = {
 					1CDE14981D03D9620072759B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = B4LQS9CJ47;
 					};
 					1CDE14AF1D03D9650072759B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -403,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ChocolateBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.TFNW.ChocolateBox;
@@ -414,6 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ChocolateBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.TFNW.ChocolateBox;
@@ -486,6 +489,7 @@
 				1CDE14C61D03D9650072759B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CDE14C71D03D9650072759B /* Build configuration list for PBXNativeTarget "ChocolateBoxTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +498,7 @@
 				1CDE14C91D03D9650072759B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CDE14CA1D03D9650072759B /* Build configuration list for PBXNativeTarget "ChocolateBoxUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +507,7 @@
 				1CDE14CC1D03D9650072759B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
