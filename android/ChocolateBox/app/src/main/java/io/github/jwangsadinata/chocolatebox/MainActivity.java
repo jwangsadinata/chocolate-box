@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -17,6 +18,7 @@ import com.parse.ParseUser;
 import org.w3c.dom.Text;
 
 import java.util.List;
+import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     public static final String KEY_EMAIL_ADDRESS = "emailAddress";
     public static final String KEY_HAS_MATCHED = "hasMatched";
     public static final String KEY_MATCHED_USER = "matchedUser";
+    private ParseObject object;
+    private String currentUser;
+    private String userFullName;
 
     @Bind(R.id.tvHelloUser)
     protected TextView tvHelloUser;
@@ -43,51 +48,41 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.tvMatchName)
     protected TextView tvMatchName;
 
+    @Bind(R.id.btnFindMatch)
+    protected Button btnFindMatch;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button btnFindMatch = (Button) findViewById(R.id.btnFindMatch);
-
         ButterKnife.bind(this);
 
-        String currentUser = ParseUser.getCurrentUser().getUsername();
+        currentUser = ParseUser.getCurrentUser().getUsername();
         ParseQuery<ParseObject> query = ParseQuery.getQuery(TABLE_USER_MATCH);
         query.whereEqualTo(KEY_USERNAME, currentUser);
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> match, ParseException e) {
                 if (e == null) {
-                    final ParseObject object = match.get(0);
-                    final boolean hasMatched = object.getBoolean(KEY_HAS_MATCHED);
+                    object = match.get(0);
+                    userFullName = object.getString(KEY_FULLNAME);
+                    boolean hasMatched = object.getBoolean(KEY_HAS_MATCHED);
                     if (hasMatched) {
-                        tvUserFullName.setText(object.getString(KEY_FULLNAME));
+                        tvUserFullName.setText(userFullName);
                         tvStatus.setText("You are currently matched with: ");
                         tvMatchName.setText(object.getString(KEY_MATCHED_USER));
                         tvMatchName.setVisibility(View.VISIBLE);
 
                         btnFindMatch.setText("Find Another Match");
-                        btnFindMatch.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                object.put(KEY_HAS_MATCHED, !hasMatched);
-                            }
-                        });
                     }
                     else {
                         tvUserFullName.setText(object.getString(KEY_FULLNAME));
                         tvStatus.setText("You currently do not have a match");
                         tvMatchName.setText(object.getString(KEY_MATCHED_USER));
-                        tvMatchName.setVisibility(View.VISIBLE);
+                        tvMatchName.setVisibility(View.INVISIBLE);
 
                         btnFindMatch.setText("Find A Match");
-                        btnFindMatch.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                object.put(KEY_HAS_MATCHED, hasMatched);
-                            }
-                        });
                     }
                 } else {
                     Log.d("error", "Error: " + e.getMessage());
@@ -96,4 +91,72 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    @OnClick(R.id.btnFindMatch)
+    protected void findMatchButton() {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(TABLE_USER_MATCH);
+        query.whereEqualTo(KEY_USERNAME, ParseUser.getCurrentUser().getUsername());
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> match, ParseException e) {
+                if (e == null) {
+                    ParseObject object = match.get(0);
+                    boolean hasMatched = object.getBoolean(KEY_HAS_MATCHED);
+                    if (hasMatched) {
+                        resetMatch();
+                        object.put(KEY_HAS_MATCHED, false);
+                        object.put(KEY_MATCHED_USER, "");
+                        object.saveInBackground();
+                    }
+                    else {
+                        object.put(KEY_HAS_MATCHED, true);
+                        findMatch();
+                        object.put(KEY_MATCHED_USER, "Hello");
+                        object.saveInBackground();
+                    }
+                } else {
+                    Log.d("error", "Error: " + e.getMessage());
+                }
+            }
+        });
+    }
+
+    private void findMatch() {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(TABLE_USER_MATCH);
+        query.whereEqualTo(KEY_HAS_MATCHED, false);
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e == null) {
+                    Random r = new Random();
+                    int result = r.nextInt(objects.size());
+                    objects.get(result).put(KEY_MATCHED_USER, userFullName);
+                    objects.get(result).put(KEY_HAS_MATCHED, true);
+                    objects.get(result).saveInBackground();
+                    String partnerName = objects.get(result).getString(KEY_FULLNAME);
+                    Toast.makeText(MainActivity.this, "Partner Name is: " + partnerName, Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Log.d("error", "Error: " + e.getMessage());
+                }
+            }
+        });
+    }
+
+    private void resetMatch() {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(TABLE_USER_MATCH);
+        query.whereEqualTo(KEY_MATCHED_USER, userFullName);
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e == null) {
+                    Toast.makeText(MainActivity.this, userFullName, Toast.LENGTH_SHORT).show();
+                    objects.get(0).put(KEY_MATCHED_USER, "");
+                    objects.get(0).put(KEY_HAS_MATCHED, false);
+                    objects.get(0).saveInBackground();
+                }
+            }
+        });
+    }
+
+
 }

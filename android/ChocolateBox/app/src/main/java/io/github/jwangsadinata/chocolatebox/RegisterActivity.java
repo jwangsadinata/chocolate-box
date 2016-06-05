@@ -93,6 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
         object.put(MainActivity.KEY_USERNAME, etUserName.getText().toString());
         object.put(MainActivity.KEY_FULLNAME, etFullName.getText().toString());
         object.put(MainActivity.KEY_EMAIL_ADDRESS, etEmail.getText().toString());
+        object.put(MainActivity.KEY_MATCHED_USER, "");
         object.put(MainActivity.KEY_HAS_MATCHED, false);
         object.saveInBackground();
     }
