@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Initialize Parse.
         let configuration = ParseClientConfiguration {
-            $0.applicationId = "YOUR_APP_ID"
-            $0.server = "http://YOUR_PARSE_SERVER:1337/parse"
+            $0.applicationId = "259williams"
+            $0.server = "https://chocolate-box-wesleyan.herokuapp.com/parse"
         }
         Parse.initializeWithConfiguration(configuration)
         
