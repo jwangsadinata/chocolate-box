@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private String userFullName;
     private String partnerName;
     private String emailDestination;
+    private String recipientFirstName;
 
     // Instantiating Canvas objects
     @Bind(R.id.tvHelloUser)
@@ -98,9 +99,9 @@ public class MainActivity extends AppCompatActivity {
 
                         // Using .split to obtain firstname from their fullname.
                         String[] splitName = object.getString(KEY_MATCHED_USER).split(" ");
-                        String firstName = splitName[0];
+                        recipientFirstName = splitName[0];
 
-                        btnFindMatch.setText("Done with " + firstName);
+                        btnFindMatch.setText("Done with " + recipientFirstName);
                         btnSetATime.setVisibility(View.VISIBLE);
                     }
 
@@ -214,14 +215,19 @@ public class MainActivity extends AppCompatActivity {
 
     // A method to send email to the recipient using external application.
     private void sendEmail() {
+        // Using .split to obtain firstname from their fullname.
+        String[] splitFullName = userFullName.split(" ");
+        String senderFirstName = splitFullName[0];
+
+        // Pre-populate the email fields
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("message/rfc822");
         i.putExtra(Intent.EXTRA_EMAIL,
                 new String[]{emailDestination});
         i.putExtra(Intent.EXTRA_SUBJECT,
-                "ChocolateBox Match");
+                "ChocolateBox - Set a Time");
         i.putExtra(Intent.EXTRA_TEXT,
-                "Hey there, let's set up a time and date for our ChocolateBox date. Looking forward to your reply.");
+                "Hey "+ recipientFirstName + ", \n \nLet's set up a time and date for our ChocolateBox date. Looking forward to your reply. \n \nRegards, \n" + senderFirstName);
         try {
             startActivity(Intent.createChooser(i, "Send Email"));
         } catch (android.content.ActivityNotFoundException ex) {
