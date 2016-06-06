@@ -21,6 +21,7 @@ import butterknife.OnClick;
 
 public class LoginActivity extends AppCompatActivity {
 
+    // Instantiating canvas objects
     @Bind(R.id.login_progress)
     protected ProgressBar login_progress;
 
@@ -42,11 +43,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Bind the Butterknife Library
         ButterKnife.bind(this);
 
+        // Logout user just in case the previous user forgot to do so
         ParseUser.logOut();
     }
 
+    // Register button -> navigate to the RegisterActivity page
     @OnClick(R.id.btnToRegister)
     protected void registerUser() {
         Intent intentStartRegisterActivity = new Intent(LoginActivity.this, RegisterActivity.class);
@@ -54,9 +58,12 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
+    // Login button -> login the user to the MainActivity if they use the correct login information
     @OnClick(R.id.btnLogin)
     protected void loginUser() {
         login_progress.setVisibility(View.VISIBLE);
+
+        // Use the parse service to login
         ParseUser.logInInBackground(etUserName.getText().toString(), etPassword.getText().toString(), new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
@@ -66,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                             "Login Success",
                             Toast.LENGTH_SHORT).show();
 
+                    // If successful, start the MainActivity
                     Intent intentStartMainActivity = new Intent(
                             LoginActivity.this, MainActivity.class);
                     startActivity(intentStartMainActivity);

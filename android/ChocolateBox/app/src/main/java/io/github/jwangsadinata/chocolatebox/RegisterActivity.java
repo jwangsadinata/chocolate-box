@@ -20,6 +20,7 @@ import butterknife.OnClick;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    // Instantiating canvas objects
     @Bind(R.id.register_progress)
     protected ProgressBar register_progress;
 
@@ -43,15 +44,18 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        // Bind the Butterknife library
         ButterKnife.bind(this);
     }
 
+    // Register the user.
     @OnClick(R.id.btnRegister)
     protected void registerUser() {
         ParseUser user = new ParseUser();
         user.setUsername(etUserName.getText().toString());
         user.setPassword(etPassword.getText().toString());
 
+        // Error checking
         if ("".equals(etFullName.getText().toString())) {
             etFullName.setError("This field cannot be empty");
         }
@@ -67,6 +71,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         else {
             register_progress.setVisibility(View.VISIBLE);
+
+            // Use parse server to create a user object and register
             user.signUpInBackground(new SignUpCallback() {
                 @Override
                 public void done(ParseException e) {
@@ -76,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                         Toast.makeText(RegisterActivity.this, "Registration Success",
                                 Toast.LENGTH_SHORT).show();
 
+                        // If successful, start the mainActivity
                         Intent intentStartMainActivity = new Intent(
                                 RegisterActivity.this, MainActivity.class);
                         startActivity(intentStartMainActivity);
@@ -89,6 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
             });
         }
 
+        // Also, create a new class called Matching, containing the relevant user information.
         ParseObject object = new ParseObject(MainActivity.TABLE_USER_MATCH);
         object.put(MainActivity.KEY_USERNAME, etUserName.getText().toString());
         object.put(MainActivity.KEY_FULLNAME, etFullName.getText().toString());
