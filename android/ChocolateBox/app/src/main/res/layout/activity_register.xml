@@ -32,16 +32,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Full Name"
-                android:maxLines="1"
-                android:singleLine="true" />
+                android:maxLines="1" />
 
             <EditText
                 android:id="@+id/etRegisterUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Username"
-                android:maxLines="1"
-                android:singleLine="true" />
+                android:maxLines="1" />
 
             <EditText
                 android:id="@+id/etRegisterEmailAddress"
@@ -49,8 +47,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Email Address"
                 android:maxLines="1"
-                android:inputType="textEmailAddress"
-                android:singleLine="true" />
+                android:inputType="textEmailAddress" />
 
             <EditText
                 android:id="@+id/etRegisterPassword"
@@ -58,8 +55,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:maxLines="1"
-                android:singleLine="true" />
+                android:maxLines="1" />
 
             <Button
                 android:id="@+id/btnRegister"

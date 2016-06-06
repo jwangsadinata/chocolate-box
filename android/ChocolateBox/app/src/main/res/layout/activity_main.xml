@@ -38,7 +38,7 @@
 
     <TextView
         android:paddingTop="20dp"
-        android:paddingBottom="50dp"
+        android:paddingBottom="40dp"
         android:id="@+id/tvMatchName"
         android:visibility="invisible"
         android:layout_width="wrap_content"
@@ -68,6 +68,14 @@
             android:text="Refresh"/>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSetATime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Set A Time"
+        android:visibility="invisible"/>
 
 
 

@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private String currentUser;
     private String userFullName;
     private String partnerName;
+    private String emailDestination;
 
     @Bind(R.id.tvHelloUser)
     protected TextView tvHelloUser;
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.btnRefresh)
     protected Button btnRefresh;
+
+    @Bind(R.id.btnSetATime)
+    protected Button btnSetATime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +86,10 @@ public class MainActivity extends AppCompatActivity {
                         tvMatchName.setText(object.getString(KEY_MATCHED_USER));
                         tvMatchName.setVisibility(View.VISIBLE);
 
-                        btnFindMatch.setText("Find Another Match");
+                        String[] splitName = object.getString(KEY_MATCHED_USER).split(" ");
+                        String firstName = splitName[0];
+                        btnFindMatch.setText("Done with " + firstName);
+                        btnSetATime.setVisibility(View.VISIBLE);
                     }
                     else {
                         tvUserFullName.setText(object.getString(KEY_FULLNAME));
@@ -91,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                         tvMatchName.setVisibility(View.INVISIBLE);
 
                         btnFindMatch.setText("Find A Match");
+                        btnSetATime.setVisibility(View.INVISIBLE);
                     }
                 } else {
                     Log.d("error", "Error: " + e.getMessage());
@@ -102,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnFindMatch)
     protected void findMatchButton() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery(TABLE_USER_MATCH);
-        query.whereEqualTo(KEY_USERNAME, ParseUser.getCurrentUser().getUsername());
+        query.whereEqualTo(KEY_USERNAME, currentUser);
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> match, ParseException e) {
                 if (e == null) {
@@ -135,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
     private void findMatch() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery(TABLE_USER_MATCH);
         query.whereEqualTo(KEY_HAS_MATCHED, false);
+        query.whereNotEqualTo(KEY_USERNAME, currentUser);
         try {
             List<ParseObject> objects = query.find();
             Random r = new Random();
@@ -143,7 +152,8 @@ public class MainActivity extends AppCompatActivity {
             objects.get(result).put(KEY_HAS_MATCHED, true);
             objects.get(result).saveInBackground();
             partnerName = objects.get(result).getString(KEY_FULLNAME);
-            Toast.makeText(MainActivity.this, "Partner Name is: " + partnerName, Toast.LENGTH_SHORT).show();
+            emailDestination = objects.get(result).getString(KEY_EMAIL_ADDRESS);
+            Toast.makeText(MainActivity.this, "Partner Name is: " + partnerName + ", click on the refresh button", Toast.LENGTH_SHORT).show();
         }
         catch (com.parse.ParseException e){
             e.printStackTrace();
@@ -169,6 +179,26 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnRefresh)
     protected void refreshMessages() {
         setup();
+    }
+
+    @OnClick(R.id.btnSetATime)
+    protected void setATime() { sendEmail();}
+
+    private void sendEmail() {
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("message/rfc822");
+        i.putExtra(Intent.EXTRA_EMAIL,
+                new String[]{emailDestination});
+        i.putExtra(Intent.EXTRA_SUBJECT,
+                "ChocolateBox Match");
+        i.putExtra(Intent.EXTRA_TEXT,
+                "Hey there, let's set up a time and date for our ChocolateBox date. Looking forward to your reply.");
+        try {
+            startActivity(Intent.createChooser(i, "Send Email"));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this,
+                    "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
