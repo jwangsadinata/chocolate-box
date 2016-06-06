@@ -7,6 +7,11 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+// In a node.js environment 
+var Parse = require('parse/node');
+
+Parse.initialize("259williams");
+Parse.serverURL = 'http://chocolate-box-wesleyan.herokuapp.com/parse';
 
 var app = express();
 
@@ -21,6 +26,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//testing Parse objects
+var TestObject = Parse.Object.extend("TestObjectJS");
+var testObject = new TestObject();
+testObject.save({doo: "car"}).then(function(object) {
+  alert("yay! it worked");
+});
+
 
 app.use('/', routes);
 app.use('/users', users);
