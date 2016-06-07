@@ -12,13 +12,6 @@ import Parse
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("Object has been saved.")
-        }
-        
-        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -29,15 +22,19 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBOutlet var usernameTextField : UITextField!
+    @IBOutlet var passwordTextField : UITextField!
+    @IBOutlet var messageLabel : UITextView!
+    
+    @IBAction func loginButton(sender : AnyObject){
+        let username = usernameTextField.text
+        let password = passwordTextField.text
+        if (username != nil || password != nil) {
+            self.messageLabel.text = "You have logged in";
+            self.performSegueWithIdentifier("VerificationSegue", sender: self)
+        } else {
+            self.messageLabel.text = "You are not registered";
+        }
     }
-    */
 
 }
