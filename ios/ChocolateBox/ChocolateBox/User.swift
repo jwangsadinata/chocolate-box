@@ -8,6 +8,9 @@
 
 import Parse
 
+class User{
+    
+}
 
 /*
 ParseUser user = new ParseUser();
