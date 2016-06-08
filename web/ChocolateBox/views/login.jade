@@ -3,3 +3,26 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  body
+    .login-page
+      center
+        font(color='white')
+          h1  Chocolate Box 
+      br
+      .form
+        form#login-form
+          input(type='text', name='username', placeholder='Username')
+          br
+          input(type='password', name='password', placeholder='Password')
+          br
+          input(type='text', name='fullname', placeholder='Full Name')
+          br
+          input(type='email', name='email', placeholder='Email Address')
+        button#btn Login
+        br
+        br
+        button#btnRegisterUser Register
+        p.message
+          | Not registered? 
+          a(href='#') Create an account
