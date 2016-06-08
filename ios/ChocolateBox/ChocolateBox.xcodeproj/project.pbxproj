@@ -21,6 +21,8 @@
 		1C71AF5F1D03E1100068F24B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF5E1D03E1100068F24B /* libz.tbd */; };
 		1C71AF611D03E11D0068F24B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71AF601D03E11D0068F24B /* libsqlite3.tbd */; };
 		1C71AF631D03E14C0068F24B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1C71AF621D03E14C0068F24B /* Podfile */; };
+		1CD9229E1D0770C100216573 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9229D1D0770C100216573 /* LoginViewController.swift */; };
+		1CD922A01D077BEA00216573 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9229F1D077BEA00216573 /* RegisterViewController.swift */; };
 		1CDE149D1D03D9630072759B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE149C1D03D9630072759B /* AppDelegate.swift */; };
 		1CDE149F1D03D9630072759B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE149E1D03D9630072759B /* ViewController.swift */; };
 		1CDE14A21D03D9640072759B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CDE14A01D03D9640072759B /* Main.storyboard */; };
@@ -64,6 +66,8 @@
 		1C71AF5E1D03E1100068F24B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1C71AF601D03E11D0068F24B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1C71AF621D03E14C0068F24B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		1CD9229D1D0770C100216573 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1CD9229F1D077BEA00216573 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1CDE14991D03D9620072759B /* ChocolateBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChocolateBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CDE149C1D03D9630072759B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CDE149E1D03D9630072759B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +145,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1CD9229B1D07705E00216573 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C71AF411D03DC4C0068F24B /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1CD9229C1D07706400216573 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CDE149E1D03D9630072759B /* ViewController.swift */,
+				1CD9229F1D077BEA00216573 /* RegisterViewController.swift */,
+				1CD9229D1D0770C100216573 /* LoginViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		1CDE14901D03D9610072759B = {
 			isa = PBXGroup;
 			children = (
@@ -167,14 +189,14 @@
 		1CDE149B1D03D9630072759B /* ChocolateBox */ = {
 			isa = PBXGroup;
 			children = (
+				1CD9229C1D07706400216573 /* Controller */,
+				1CD9229B1D07705E00216573 /* Model */,
 				1CDE149C1D03D9630072759B /* AppDelegate.swift */,
-				1CDE149E1D03D9630072759B /* ViewController.swift */,
 				1CDE14A01D03D9640072759B /* Main.storyboard */,
 				1CDE14A61D03D9640072759B /* Assets.xcassets */,
 				1CDE14A81D03D9640072759B /* LaunchScreen.storyboard */,
 				1CDE14AB1D03D9640072759B /* Info.plist */,
 				1CDE14A31D03D9640072759B /* ChocolateBox.xcdatamodeld */,
-				1C71AF411D03DC4C0068F24B /* User.swift */,
 			);
 			path = ChocolateBox;
 			sourceTree = "<group>";
@@ -393,6 +415,8 @@
 				1C71AF421D03DC4C0068F24B /* User.swift in Sources */,
 				1CDE149F1D03D9630072759B /* ViewController.swift in Sources */,
 				1CDE14A51D03D9640072759B /* ChocolateBox.xcdatamodeld in Sources */,
+				1CD922A01D077BEA00216573 /* RegisterViewController.swift in Sources */,
+				1CD9229E1D0770C100216573 /* LoginViewController.swift in Sources */,
 				1CDE149D1D03D9630072759B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
