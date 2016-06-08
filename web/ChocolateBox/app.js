@@ -28,15 +28,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //testing Parse objects
+/*
 var TestObject = Parse.Object.extend("TestObjectJS");
 var testObject = new TestObject();
 testObject.save({doo: "car"}).then(function(object) {
   alert("yay! it worked");
 });
-
+*/
 
 app.use('/', routes);
 app.use('/users', users);
+//app.use('/register', routes.register);
+//app.use('/login', routes.login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
