@@ -13,7 +13,7 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        passwordTextField.secureTextEntry = true
         // Do any additional setup after loading the view.
     }
 
@@ -35,6 +35,8 @@ class RegisterViewController: UIViewController {
         let email = emailTextField.text
         let password = passwordTextField.text
         
+        addUser(fullname!, regUser: username!, regEmail: email!, regPassword: password!)
+    /*
         if (fullname == ""){
             messageLabel.text = "Please input a valid name."
         }
@@ -52,20 +54,33 @@ class RegisterViewController: UIViewController {
         }
         else{
             addUser(fullname!, regUser: username!, regEmail: email!, regPassword: password!)
-            self.messageLabel.text = "You are now signed up!";
-            self.performSegueWithIdentifier("RegisterSegue", sender: self)
         }
+    */
     }
 
     func addUser(regName: String, regUser: String, regEmail: String, regPassword: String){
-        let user = PFObject(className: "User")
-        user.setObject(regName, forKey: "fullname")
-        user.setObject(regUser, forKey: "username")
-        user.setObject(regEmail, forKey: "email")
-        user.setObject(regPassword, forKey: "password")
-        user.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+        let user = PFUser()
+        user.username = regUser
+        user.password = regPassword
+        user.email = regEmail
+        user.signUpInBackgroundWithBlock { (success: Bool, error: NSError?)  -> Void in
+            if success {
+                print("User Uploaded")
+            } else {
+                print("Error: \(error)")
+            }
+        }
+        let match = PFObject(className: "Matching")
+        match.setObject(regName, forKey: "fullname")
+        match.setObject(regUser, forKey: "username")
+        match.setObject(regEmail, forKey: "emailAddress")
+        match.setObject(false, forKey: "hasMatched")
+        match.setObject("", forKey: "hasMatched")
+        match.saveInBackgroundWithBlock { (succeeded, error) -> Void in
             if succeeded {
-                print("Object Uploaded")
+                self.messageLabel.text = "You are now signed up!";
+                self.performSegueWithIdentifier("RegisterSegue", sender: nil)
+                print("Match Uploaded")
             } else {
                 print("Error: \(error)")
             }
@@ -73,12 +88,6 @@ class RegisterViewController: UIViewController {
     }
     
 }
-
-
-
-
-
-
 
 
 

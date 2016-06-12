@@ -10,10 +10,14 @@ import UIKit
 import Parse
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet var usernameTextField : UITextField!
+    @IBOutlet var passwordTextField : UITextField!
+    @IBOutlet var messageLabel : UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        passwordTextField.secureTextEntry = true
         // Do any additional setup after loading the view.
     }
 
@@ -22,18 +26,12 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet var usernameTextField : UITextField!
-    @IBOutlet var passwordTextField : UITextField!
-    @IBOutlet var messageLabel : UITextView!
-    
     @IBAction func loginButton(sender : AnyObject){
-        let username = usernameTextField.text
-        let password = passwordTextField.text
-        if (username != nil || password != nil) {
-            self.messageLabel.text = "You have logged in";
-            self.performSegueWithIdentifier("VerificationSegue", sender: self)
-        } else {
-            self.messageLabel.text = "You are not registered";
+        PFUser.logInWithUsernameInBackground(usernameTextField.text!, password: passwordTextField.text!) { user, error in
+            if user != nil {
+                self.performSegueWithIdentifier("VerificationSegue", sender: nil)
+            } else if let error = error {
+                print("Error: \(error)")            }
         }
     }
 
