@@ -29,18 +29,30 @@ class LoginViewController: UIViewController {
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         var value: Bool = true
         if identifier == "VerificationSegue" { // you define it in the storyboard (click on the segue, then Attributes' inspector > Identifier
-            do {
-                let currUser = try PFUser.logInWithUsername(usernameTextField.text!, password: passwordTextField.text!)
-                if currUser.username == nil {
-                    value = false
-                    print ("nothing should happen...")
-                } else{
-                    print ("login!")
-                }
-            }
-            catch {
+            if usernameTextField.text!.isEmpty{
                 value = false
-                print ("Something went wrong")
+                messageLabel.text = "Please input a valid username"
+            }
+            else if passwordTextField.text!.isEmpty{
+                value = false
+                messageLabel.text = "Please input a valid password"
+            }
+            else{
+                do {
+                    let currUser = try PFUser.logInWithUsername(usernameTextField.text!, password: passwordTextField.text!)
+                    //performing synchronous login
+                    if currUser.username == nil {
+                        value = false
+                        messageLabel.text = "Incorrect email/password"
+                        print ("nothing should happen...")
+                    } else{
+                        print ("login!")
+                    }
+                }
+                catch {
+                    value = false
+                    print ("Something went wrong")
+                }
             }
 
             if (value == false){
@@ -59,18 +71,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButton(sender : AnyObject){
         self.shouldPerformSegueWithIdentifier("VerificationSegue", sender: nil)
-        /*
-        PFUser.logInWithUsernameInBackground(usernameTextField.text!, password: passwordTextField.text!) { (user, error) -> Void in
-             if (error == nil) {
-                self.shouldPerformSegueWithIdentifier("VerificationSegue", sender: nil)
-                print("HEY!")
-             }
-             else{
-                print(error)
-                print("NO")
-             }
-        }
-         */
+        //adding a conditional to the segue
     }
 /*
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {

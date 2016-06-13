@@ -31,33 +31,58 @@ class RegisterViewController: UIViewController {
     @IBOutlet var messageLabel: UITextView!
     
     @IBAction func registerButton(sender : AnyObject){
-        let fullname = fullnameTextField.text
-        let username = usernameTextField.text
-        let email = emailTextField.text
-        let password = passwordTextField.text
-        
-        addUser(fullname!, regUser: username!, regEmail: email!, regPassword: password!)
-    /*
-        if (fullname == ""){
-            messageLabel.text = "Please input a valid name."
-        }
-        else if(username == ""){
-            messageLabel.text = "Please input a valid username."
-        }
-        else if(email == ""){
-            messageLabel.text = "Please input a valid email."
-        }
-        else if(password == ""){
-            messageLabel.text = "Please input a valid password."
-        }
-        else if(password != verifyTextField.text){
-            messageLabel.text = "Your password and verification do not match."
-        }
-        else{
-            addUser(fullname!, regUser: username!, regEmail: email!, regPassword: password!)
-        }
-    */
+        shouldPerformSegueWithIdentifier("registerSegue", sender: nil)
     }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        var value: Bool = true
+        if identifier == "registerSegue" { // you define it in the storyboard (click on the segue, then Attributes' inspector > Identifier
+            
+            let fullname = fullnameTextField.text
+            let username = usernameTextField.text
+            let email = emailTextField.text
+            let password = passwordTextField.text
+            
+            if (fullname == ""){
+                value = false
+                messageLabel.text = "Please input a valid name."
+            }
+            else if(username == ""){
+                value = false
+                messageLabel.text = "Please input a valid username."
+            }
+            else if(email == ""){
+                value = false
+                messageLabel.text = "Please input a valid email."
+            }
+            else if(password == ""){
+                value = false
+                messageLabel.text = "Please input a valid password."
+            }
+            else if(password != verifyTextField.text){
+                value = false
+                messageLabel.text = "Your password and verification do not match."
+            }
+            else{
+                addUser(fullname!, regUser: username!, regEmail: email!, regPassword: password!)
+                print("Everything seems good")
+            }
+            
+            if (value == false){
+                print(value)
+                print("*** NOPE, segue wont occur")
+                return false
+            }
+            else {
+                print(value)
+                print("*** YEP, segue will occur")
+            }
+        }
+        
+        // by default, transition
+        return false
+    }
+
 
     func addUser(regName: String, regUser: String, regEmail: String, regPassword: String){
         let user = PFUser()
