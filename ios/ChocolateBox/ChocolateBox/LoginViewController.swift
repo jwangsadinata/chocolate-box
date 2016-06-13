@@ -26,13 +26,87 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func loginButton(sender : AnyObject){
-        PFUser.logInWithUsernameInBackground(usernameTextField.text!, password: passwordTextField.text!) { user, error in
-            if user != nil {
-                self.performSegueWithIdentifier("VerificationSegue", sender: nil)
-            } else if let error = error {
-                print("Error: \(error)")            }
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        var value: Bool = true
+        if identifier == "VerificationSegue" { // you define it in the storyboard (click on the segue, then Attributes' inspector > Identifier
+            do {
+                let currUser = try PFUser.logInWithUsername(usernameTextField.text!, password: passwordTextField.text!)
+                if currUser.username == nil {
+                    value = false
+                    print ("nothing should happen...")
+                } else{
+                    print ("login!")
+                }
+            }
+            catch {
+                value = false
+                print ("Something went wrong")
+            }
+
+            if (value == false){
+            //if (self.usernameTextField.text!.isEmpty == true) {
+                print("*** NOPE, segue wont occur")
+                return false
+            }
+            else {
+                print("*** YEP, segue will occur")
+            }
         }
+        
+        // by default, transition
+        return true
+    }
+    
+    @IBAction func loginButton(sender : AnyObject){
+        self.shouldPerformSegueWithIdentifier("VerificationSegue", sender: nil)
+        /*
+        PFUser.logInWithUsernameInBackground(usernameTextField.text!, password: passwordTextField.text!) { (user, error) -> Void in
+             if (error == nil) {
+                self.shouldPerformSegueWithIdentifier("VerificationSegue", sender: nil)
+                print("HEY!")
+             }
+             else{
+                print(error)
+                print("NO")
+             }
+        }
+         */
+    }
+/*
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        var value : Bool = true
+        if identifier == "VerificationSegue" { // you define it in the storyboard (click on the segue, then Attributes' inspector > Identifier
+            
+            PFUser.logInWithUsernameInBackground(usernameTextField.text!, password: passwordTextField.text!){ user, error in
+                    if (user == nil) {
+                        value = false
+                        print(user)
+                        print("*** NOPE, segue wont occur")
+                        return
+                    }
+                    else {
+                        print("*** YEP, segue will occur")
+                    }
+                }
+            
+        }
+    
+        return value
+        // by default, transition
+    }
+    
+    @IBAction func loginButton(sender : AnyObject){
+        self.shouldPerformSegueWithIdentifier("VerificationSegue", sender: nil)
     }
 
+     PFUser.logInWithUsernameInBackground(usernameTextField.text!, password: passwordTextField.text!) { user, error in
+     if user != nil {
+     self.shouldPerformSegueWithIdentifier("VerificationSegue", sender: nil)
+     } else if let error = error {
+     print("Error: \(error)")
+     }
+     }
+ */
+    
+    
 }

@@ -119,7 +119,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IFu-39-ncY"/>
-                                    <segue destination="eQ8-T1-7dT" kind="show" identifier="VerificationSegue" id="epv-DV-uv1"/>
+                                    <segue destination="eQ8-T1-7dT" kind="showDetail" identifier="VerificationSegue" id="ZAt-Dg-iHs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcl-yK-ycc">
@@ -400,8 +400,8 @@
                                 </variation>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UOE-2I-VQI"/>
-                                    <action selector="registerButton:" destination="kTg-mz-fze" eventType="touchDragInside" id="h2P-jg-hDu"/>
-                                    <segue destination="eQ8-T1-7dT" kind="show" identifier="RegisterSegue" id="3mt-Sa-HFS"/>
+                                    <action selector="registerButton:" destination="kTg-mz-fze" eventType="touchUpInside" id="oan-a6-RWl"/>
+                                    <segue destination="eQ8-T1-7dT" kind="showDetail" id="0Zb-Fc-Lqh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -589,6 +589,6 @@
         <image name="ChocolateBox" width="700" height="524"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3mt-Sa-HFS"/>
+        <segue reference="ZAt-Dg-iHs"/>
     </inferredMetricsTieBreakers>
 </document>
